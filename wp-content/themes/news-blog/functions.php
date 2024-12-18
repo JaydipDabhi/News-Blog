@@ -211,3 +211,5 @@ function custom_enqueue_styles_and_scripts()
 	wp_enqueue_script('main', $theme_dir . '/assets/js/main.js', array('jquery', 'bootstrap', 'aos', 'glightbox', 'swiper-bundle'), filemtime(get_template_directory() . '/assets/js/main.js'), true);
 }
 add_action('wp_enqueue_scripts', 'custom_enqueue_styles_and_scripts');
+
+add_filter('show_admin_bar', '__return_false');

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,48 +13,69 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.png" rel="icon">
+	<link href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'news-blog' ); ?></a>
+	<?php wp_body_open(); ?>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'news-blog'); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$news_blog_description = get_bloginfo( 'description', 'display' );
-			if ( $news_blog_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $news_blog_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<header id="header" class="header dark-background d-flex flex-column">
+			<i class="header-toggle d-xl-none bi bi-list"></i>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'news-blog' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<div class="profile-img">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+			</div>
+
+			<a href="index.html" class="logo d-flex align-items-center justify-content-center">
+				<!-- Uncomment the line below if you also wish to use an image logo -->
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
+				<h1 class="sitename">Alex Smith</h1>
+			</a>
+
+			<div class="social-links text-center">
+				<a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+				<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+				<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+				<a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+				<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+			</div>
+
+			<nav id="navmenu" class="navmenu">
+				<ul>
+					<li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+					<li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+					<li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+					<li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+					<li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+					<li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+						<ul>
+							<li><a href="#">Dropdown 1</a></li>
+							<li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+								<ul>
+									<li><a href="#">Deep Dropdown 1</a></li>
+									<li><a href="#">Deep Dropdown 2</a></li>
+									<li><a href="#">Deep Dropdown 3</a></li>
+									<li><a href="#">Deep Dropdown 4</a></li>
+									<li><a href="#">Deep Dropdown 5</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Dropdown 2</a></li>
+							<li><a href="#">Dropdown 3</a></li>
+							<li><a href="#">Dropdown 4</a></li>
+						</ul>
+					</li>
+					<li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+				</ul>
+			</nav>
+
+		</header><!-- #masthead -->

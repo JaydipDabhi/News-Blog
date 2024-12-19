@@ -200,12 +200,12 @@ function custom_enqueue_styles_and_scripts()
 	wp_enqueue_script('aos', $theme_dir . '/assets/vendor/aos/aos.js', array(), filemtime(get_template_directory() . '/assets/vendor/aos/aos.js'), true);
 	wp_enqueue_script('glightbox', $theme_dir . '/assets/vendor/glightbox/js/glightbox.min.js', array(), filemtime(get_template_directory() . '/assets/vendor/glightbox/js/glightbox.min.js'), true);
 	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/swiper/swiper-bundle.min.js', array(), filemtime(get_template_directory() . '/assets/vendor/swiper/swiper-bundle.min.js'), true);
-	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/php-email-form/validate.js', array(), filemtime(get_template_directory() . '/assets/vendor/php-email-form/validate.js'), true);
-	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/typed.js/typed.umd.js', array(), filemtime(get_template_directory() . '/assets/vendor/typed.js/typed.umd.js'), true);
-	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/purecounter/purecounter_vanilla.js', array(), filemtime(get_template_directory() . '/assets/vendor/purecounter/purecounter_vanilla.js'), true);
-	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/waypoints/noframework.waypoints.js', array(), filemtime(get_template_directory() . '/assets/vendor/waypoints/noframework.waypoints.js'), true);
-	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js', array(), filemtime(get_template_directory() . '/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'), true);
-	wp_enqueue_script('swiper-bundle', $theme_dir . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', array(), filemtime(get_template_directory() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js'), true);
+	wp_enqueue_script('validate', $theme_dir . '/assets/vendor/php-email-form/validate.js', array(), filemtime(get_template_directory() . '/assets/vendor/php-email-form/validate.js'), true);
+	wp_enqueue_script('typed-umd', $theme_dir . '/assets/vendor/typed.js/typed.umd.js', array(), filemtime(get_template_directory() . '/assets/vendor/typed.js/typed.umd.js'), true);
+	wp_enqueue_script('purecounter-vanilla', $theme_dir . '/assets/vendor/purecounter/purecounter_vanilla.js', array(), filemtime(get_template_directory() . '/assets/vendor/purecounter/purecounter_vanilla.js'), true);
+	wp_enqueue_script('noframework-waypoints', $theme_dir . '/assets/vendor/waypoints/noframework.waypoints.js', array(), filemtime(get_template_directory() . '/assets/vendor/waypoints/noframework.waypoints.js'), true);
+	wp_enqueue_script('imagesloaded-pkgd', $theme_dir . '/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js', array(), filemtime(get_template_directory() . '/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'), true);
+	wp_enqueue_script('isotope-pkgd', $theme_dir . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', array(), filemtime(get_template_directory() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js'), true);
 
 	// Enqueue custom main.js (your custom JavaScript file)
 	wp_enqueue_script('main', $theme_dir . '/assets/js/main.js', array('jquery', 'bootstrap', 'aos', 'glightbox', 'swiper-bundle'), filemtime(get_template_directory() . '/assets/js/main.js'), true);
